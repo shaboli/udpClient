@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DDMenuController.h"
+#import "LeftController.h"
+#import "RightController.h"
 
-@class ViewController;
+@class WinampController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) DDMenuController *menuController;
 
 @end

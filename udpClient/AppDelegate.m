@@ -8,26 +8,35 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "WinampController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize menuController = _menuController;
 
 - (void)dealloc
 {
     [_window release];
-    [_viewController release];
+    [_menuController release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    self.window.rootViewController = self.viewController;
+    WinampController *controller = [[[WinampController alloc] initWithNibName:@"WinampController" bundle:nil] autorelease];
+    controller.controlID = 1;
+    
+    self.menuController = [[[DDMenuController alloc] initWithRootViewController:controller] autorelease];
+    
+    LeftController *leftController = [[LeftController alloc] init];
+    self.menuController.leftController = leftController;
+    
+    RightController *rightController = [[RightController alloc] init];
+    self.menuController.rightController = rightController;
+    
+    self.window.rootViewController = self.menuController;
     [self.window makeKeyAndVisible];
     return YES;
 }
