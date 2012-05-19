@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "WinampController.h"
-
+//lior
 @implementation AppDelegate
 
 @synthesize window = _window;
