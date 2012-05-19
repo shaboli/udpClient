@@ -11,6 +11,7 @@
 #import "LeftController.h"
 #import "RightController.h"
 
+//lior
 @class WinampController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
